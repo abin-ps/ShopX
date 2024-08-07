@@ -32,32 +32,23 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            GetBuilder<LayoutController>(builder: (layoutController) {
+            GetBuilder<ProductScreenLayoutController>(builder: (layoutController) {
               return Row(
                 children: [
                   const Expanded(
                       child: Text(
                     "ShopX",
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w900,
-                    ),
+                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.w900),
                   )),
                   IconButton(
                       onPressed: () {},
-                      icon: layoutController.defaultLayout == Layouts.gridview
-                          ? const Icon(
-                              Icons.view_list_rounded,
-                              color: Colors.blueGrey,
-                            )
+                      icon: layoutController.defaultLayout == ProductScrreenLayouts.gridview
+                          ? const Icon(Icons.view_list_rounded, color: Colors.blueGrey)
                           : const Icon(Icons.view_list_rounded)),
                   IconButton(
                       onPressed: () {},
-                      icon: layoutController.defaultLayout == Layouts.gridview
-                          ? const Icon(
-                              Icons.grid_view,
-                              color: Colors.blueGrey,
-                            )
+                      icon: layoutController.defaultLayout == ProductScrreenLayouts.gridview
+                          ? const Icon(Icons.grid_view, color: Colors.blueGrey)
                           : const Icon(Icons.grid_view))
                 ],
               );
@@ -66,9 +57,7 @@ class HomePage extends StatelessWidget {
               child: Obx(() {
                 return productController.isLoading.value
                     ? const Center(
-                        child: CircularProgressIndicator(
-                          color: Colors.blueGrey,
-                        ),
+                        child: CircularProgressIndicator(color: Colors.blueGrey),
                       )
                     : NotificationListener(
                         onNotification: (ScrollNotification scrollDetails) {

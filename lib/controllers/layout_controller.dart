@@ -1,11 +1,11 @@
 import 'package:get/state_manager.dart';
 
-enum Layouts { listview, gridview }
+enum ProductScrreenLayouts { listview, gridview }
 
-class LayoutController extends GetxController {
-  var defaultLayout = Layouts.gridview;
+class ProductScreenLayoutController extends GetxController {
+  var defaultLayout = ProductScrreenLayouts.gridview;
 
-  switchLayout(Layouts selectedLayout) {
+  switchLayout(ProductScrreenLayouts selectedLayout) {
     defaultLayout = selectedLayout;
   }
 }
