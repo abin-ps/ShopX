@@ -41,12 +41,16 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(fontSize: 32, fontWeight: FontWeight.w900),
                   )),
                   IconButton(
-                      onPressed: () {},
-                      icon: layoutController.defaultLayout == ProductScrreenLayouts.gridview
+                      onPressed: () {
+                        layoutController.switchLayout(ProductScrreenLayouts.listview);
+                      },
+                      icon: layoutController.defaultLayout == ProductScrreenLayouts.listview
                           ? const Icon(Icons.view_list_rounded, color: Colors.blueGrey)
                           : const Icon(Icons.view_list_rounded)),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        layoutController.switchLayout(ProductScrreenLayouts.gridview);
+                      },
                       icon: layoutController.defaultLayout == ProductScrreenLayouts.gridview
                           ? const Icon(Icons.grid_view, color: Colors.blueGrey)
                           : const Icon(Icons.grid_view))
